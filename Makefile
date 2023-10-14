@@ -42,7 +42,8 @@ SRCS =			ft_isalpha.c		\
 	  			ft_putstr_fd.c		\
 	  			ft_putendl_fd.c		\
 	  			ft_putnbr_fd.c
-SRCS_BONUS =	ft_lstnew.c			\
+SRCS_BONUS =	$(SRCS)				\
+				ft_lstnew.c			\
 				ft_lstadd_front.c	\
 				ft_lstsize.c		\
 				ft_lstlast.c		\
@@ -53,16 +54,18 @@ SRCS_BONUS =	ft_lstnew.c			\
 				ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
-
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all: $(NAME)
 
+bonus: $(OBJS_BONUS)
+	@make OBJS="$(OBJS_BONUS)" all
+
 $(NAME): $(OBJS)
 	ar rcs $@ $^
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	ar rcs $(NAME) $^
+%.o: %.c
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
 	rm -f $(OBJS) $(OBJS_BONUS)
@@ -79,3 +82,5 @@ test: $(OUT)
 
 tclean:
 	rm -f $(OUT)
+
+.PHONY: all bonus clean fclean re test tclean
