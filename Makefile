@@ -1,12 +1,8 @@
 NAME = libft.a
 
-OUT = test.out
-
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
-
-LIBS = -isystem /usr/include/bsd -DLIBBSD_OVERLAY -lbsd
 
 SRCS =			ft_isalpha.c		\
 				ft_isdigit.c		\
@@ -75,12 +71,4 @@ fclean: clean
 
 re: fclean all
 
-$(OUT): $(SRCS) $(BONUS_SRCS)
-	$(CC) $(CFLAGS) -o $@ $(SRCS) $(BONUS_SRCS) $(LIBS)
-
-test: $(OUT)
-
-tclean:
-	rm -f $(OUT)
-
-.PHONY: all bonus clean fclean re test tclean
+.PHONY: all bonus clean fclean re

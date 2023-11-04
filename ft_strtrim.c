@@ -6,48 +6,25 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 09:08:13 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/11 09:29:36 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/11/04 16:21:48 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	isin(char c, char const *set)
-{
-	while (*set)
-	{
-		if (*set == c)
-			return (1);
-		set++;
-	}
-	return (0);
-}
-
-static int	inis(char c, char const *set)
-{
-	set += ft_strlen(set) - 1;
-	while (*set)
-	{
-		if (*set == c)
-			return (1);
-		set--;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
 	size_t	start;
-	size_t	end;
+	size_t	len;
 
 	start = 0;
-	end = ft_strlen(s1) - 1;
-	while (isin(s1[start], set))
+	while (ft_strchr(set, s1[start]))
 		start++;
-	while (inis(s1[end], set))
-		end--;
-	trim = ft_substr(s1, start, end - start + 1);
+	len = ft_strlen(s1) - start;
+	while (len && ft_strrchr(set, s1[start + len]))
+		len--;
+	trim = ft_substr(s1, start, len + 1);
 	if (!trim)
 		return (0);
 	return (trim);
@@ -58,9 +35,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char	*s1 = ";lkj;lkjbananajlkj;";
-	char	*set = "jkl;";
+	char	*s1 = "aaaaa";
+	char	*set = "a";
 
-	printf("%s\n", ft_strtrim(s1, set));
+	printf(".%s.\n", ft_strtrim(s1, set));
 }
 */
