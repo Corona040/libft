@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:56:57 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/09 17:15:29 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:26:21 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (*(s1 + i) - *(s2 + i));
 	return (0);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s1 = "test\200";
-	char	*s2 = "test\0";
-	size_t	n = 6;
-
-	printf("%i\n", strncmp(s1, s2, n));
-	printf("%i\n", ft_strncmp(s1, s2, n));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:32:26 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/13 09:43:18 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:26:17 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (mapi);
 }
-
-/*
-#include <stdio.h>
-
-char	itolower(unsigned int i, char c)
-{
-	(void) i;
-	return (ft_tolower(c));
-}
-
-int	main(void)
-{
-	char *str = "BANANAS";
-
-	printf("%s\n", ft_strmapi(str, &itolower));
-}
-*/

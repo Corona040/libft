@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 09:29:54 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/14 10:41:44 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:25:44 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,50 +90,3 @@ char	**ft_split(char const *s, char c)
 	split[nmemb] = 0;
 	return (split);
 }
-
-/*
-#include <stdio.h>
-
-void	putnchar(char *str, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n && *(str + i))
-	{
-		if (ft_isprint(*(str + i)))
-			ft_putchar_fd(*(str + i++), 1);
-		else
-		{
-			ft_putchar_fd('.', 1);
-			i++;
-		}
-	}
-	while (i < n)
-	{
-		if (ft_isprint(*(str + i)))
-			ft_putchar_fd(*(str + i++), 1);
-		else
-		{
-			ft_putchar_fd('.', 1);
-			i++;
-		}
-	}
-}
-
-int	main(void)
-{
-	char *str = "12a,3--h^^^^";
-	char c = '^';
-	char **split;
-
-	split = ft_split(str, c);
-	printf("%p\n", *split);
-	while (*split)
-	{
-		putnchar(*split++, 10);
-		ft_putchar_fd('\n', 1);
-	}
-	printf("%p\n", *split);
-}
-*/

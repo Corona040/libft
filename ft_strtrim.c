@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 09:08:13 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/11/04 16:21:48 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:26:34 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	return (trim);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s1 = "aaaaa";
-	char	*set = "a";
-
-	printf(".%s.\n", ft_strtrim(s1, set));
-}
-*/

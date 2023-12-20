@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:22:54 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/13 10:11:30 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:25:33 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(n + '0', fd);
 }
-
-/*
-int	main(void)
-{
-	ft_putnbr_fd(2147483647, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(-2147483648, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(0, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(120, 1);
-}
-*/

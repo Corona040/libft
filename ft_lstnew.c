@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:00:30 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/14 10:35:31 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:24:48 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new->content = content;
 	return (new);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	t_list *node;
-	int	x = 3;
-
-	node = ft_lstnew(&x);
-	printf("%i\n", *(int *)node->content);
-}
-*/

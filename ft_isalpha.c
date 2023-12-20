@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 19:32:58 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/09 10:34:26 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:23:59 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-/*
-#include <ctype.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("they 'a': %i\n", isalpha('b'));
-	printf("mine 'a': %i\n\n", ft_isalpha('b'));
-	printf("they 'A': %i\n", isalpha('X'));
-	printf("mine 'A': %i\n\n", ft_isalpha('X'));
-	printf("they '1': %i\n", isalpha('1'));
-	printf("mine '1': %i\n", ft_isalpha('1'));
-}
-*/

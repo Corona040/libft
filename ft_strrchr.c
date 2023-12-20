@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:49:26 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/13 11:05:36 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:26:30 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,3 @@ char	*ft_strrchr(const char *s, int c)
 	else
 		return (0);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*str = "banana";
-	int		c = 'a';
-
-	printf("they: %p\n", strrchr(str, c));
-	printf("mine: %p\n", ft_strrchr(str, c));
-}
-*/

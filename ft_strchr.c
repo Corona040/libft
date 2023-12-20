@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:41:56 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/11/03 12:36:27 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:25:48 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,3 @@ char	*ft_strchr(const char *s, int c)
 	else
 		return (0);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*str = "teste";
-	int		c = 'e';
-
-	printf("they: %p\n", strchr(str, c));
-	printf("mine: %p\n", ft_strchr(str, c));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:20:44 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/14 08:25:58 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:25:29 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,3 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
-
-/*
-int	main(void)
-{
-	ft_putendl_fd("bananas", 1);
-}
-*/

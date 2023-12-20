@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:29:12 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/09 10:51:21 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:26:13 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("they: %lu\n", strlen(""));
-	printf("mine: %lu\n\n", ft_strlen(""));
-	printf("they: %lu\n", strlen("a"));
-	printf("mine: %lu\n\n", ft_strlen("a"));
-	printf("they: %lu\n", strlen("banana"));
-	printf("mine: %lu\n\n", ft_strlen("banana"));
-	printf("they: %lu\n", strlen(" is al"));
-	printf("mine: %lu\n\n", ft_strlen(" is al"));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 08:58:23 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/11 11:25:06 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:26:01 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(join, s2, len_s1 + len_s2 + 1);
 	return (join);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s1 = "apui";
-	char	*s2 = "zeiro";
-
-	printf("%s\n", ft_strjoin(s1, s2));
-}
-*/

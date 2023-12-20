@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:39:36 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/11 11:24:55 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:24:22 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,3 @@ char	*ft_itoa(int n)
 	add_digits(nmb, n);
 	return (nmb);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	int	n = -102;
-
-	printf("%s\n", ft_itoa(n));
-}
-*/

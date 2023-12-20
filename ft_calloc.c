@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:37:38 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/11 09:05:14 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:23:48 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(array, nmemb * size);
 	return (array);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	size_t nmemb = 1;
-	size_t size = max_size_t();
-
-	//printf("%lu\n", sizeof(size_t));
-	//printf("%zu\n", max_size_t());
-	printf("%p\n", calloc(nmemb, size));
-	printf("%p\n", ft_calloc(nmemb, size));
-}
-*/

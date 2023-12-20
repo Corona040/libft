@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:56:58 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/10/12 12:03:24 by ecorona-         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:25:57 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/*
-#include <stdio.h>
-
-void    itolower(unsigned int i, char *c)
-{
-    (void) i;
-    *c = ft_tolower(*c);
-}
-
-int main(void)
-{
-    char str[] = "BANANAS";
-
-	ft_striteri(str, &itolower);
-    printf("%s\n", str);
-}
-*/
