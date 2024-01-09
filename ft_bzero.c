@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:14:37 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:23:43 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:23:19 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man bzero
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);

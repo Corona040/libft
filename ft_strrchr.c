@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:49:26 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:26:30 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 11:08:24 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man strrchr
 char	*ft_strrchr(const char *s, int c)
 {
 	char			*str;

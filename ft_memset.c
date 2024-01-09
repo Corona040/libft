@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:41:57 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:25:21 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:51:12 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man memset
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;

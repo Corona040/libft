@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:23:55 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:23:27 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:23:16 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man atoi
 int	ft_atoi(const char *nptr)
 {
 	int	result;

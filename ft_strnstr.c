@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:12:43 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:26:25 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 11:08:03 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man strnstr
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:13:32 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:25:15 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:50:56 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man memmove
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*d;

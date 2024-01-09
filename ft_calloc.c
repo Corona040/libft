@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:37:38 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:23:48 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:23:44 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man calloc
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*array;

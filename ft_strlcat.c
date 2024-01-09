@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:15:59 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:26:05 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 11:04:55 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man strlcat
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	len_dst;

@@ -6,12 +6,13 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:01:04 by ecorona-          #+#    #+#             */
-/*   Updated: 2023/12/20 13:24:05 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/01/09 10:24:50 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// man isascii
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 0x7f)
