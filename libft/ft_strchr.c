@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:41:56 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/01/09 11:00:28 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/23 23:42:02 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 // man strchr
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	uc;
 
-	uc = (unsigned char) c;
-	while (*s != uc && *s)
+	if (!s)
+		return (0);
+	while (*s && *s != c)
 		s++;
-	if (*s == uc)
+	if (*s == c)
 		return ((char *)s);
 	else
 		return (0);
