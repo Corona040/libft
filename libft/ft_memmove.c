@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:13:32 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/01/09 10:50:56 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 02:01:51 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	if (!dest && !src)
+	if (!dest || !src)
 		return (dest);
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
