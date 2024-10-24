@@ -1,0 +1,2 @@
+NULL protections for functions with pointer arguments?
+Is memmove recursive?
