@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 14:52:23 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/24 02:02:38 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 12:15:47 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ int	isalpha_00(void)
 {
 	int	result = 1;
 
-	for (int i = -1; i < 256; i++) {
+	for (int i = -1; i < 256; i++)
 		result = result && ((ft_isalpha(i) > 0) == (isalpha(i) > 0));
-	}
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -104,9 +104,9 @@ int	isdigit_00(void)
 {
 	int	result = 1;
 
-	for (int i = -1; i < 256; i++) {
+	for (int i = -1; i < 256; i++)
 		result = result && ((ft_isdigit(i) > 0) == (isdigit(i) > 0));
-	}
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -115,9 +115,9 @@ int	isalnum_00(void)
 {
 	int	result = 1;
 
-	for (int i = -1; i < 256; i++) {
+	for (int i = -1; i < 256; i++)
 		result = result && ((ft_isalnum(i) > 0) == (isalnum(i) > 0));
-	}
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -126,9 +126,9 @@ int	isascii_00(void)
 {
 	int	result = 1;
 
-	for (int i = -1; i < 256; i++) {
+	for (int i = -1; i < 256; i++)
 		result = result && ((ft_isascii(i) > 0) == (isascii(i) > 0));
-	}
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -137,9 +137,9 @@ int	isprint_00(void)
 {
 	int	result = 1;
 
-	for (int i = -1; i < 256; i++) {
+	for (int i = -1; i < 256; i++)
 		result = result && ((ft_isprint(i) > 0) == (isprint(i) > 0));
-	}
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -148,9 +148,9 @@ int	toupper_00(void)
 {
 	int	result = 1;
 
-	for (int i = -1; i < 256; i++) {
+	for (int i = -1; i < 256; i++)
 		result = result && (ft_toupper(i) == toupper(i));
-	}
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -159,9 +159,9 @@ int	tolower_00(void)
 {
 	int	result = 1;
 
-	for (int i = -1; i < 256; i++) {
+	for (int i = -1; i < 256; i++)
 		result = result && (ft_tolower(i) == tolower(i));
-	}
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -169,8 +169,19 @@ int	tolower_00(void)
 // string.h strlen has nonnull attribute
 int	strlen_00(void)
 {
-	ft_strlen(NULL);
-	_ft_assert(1 , YELLOW);
+	int	wstatus;
+
+	if (fork() == 0) {
+		ft_strlen(NULL);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
+	_ft_assert(1, RED);
 	return (SUCCESS);
 }
 
@@ -192,8 +203,19 @@ int	strlen_02(void)
 
 int	strchr_00(void)
 {
-	ft_strchr(NULL, 0);
-	_ft_assert(1 , RED);
+	int	wstatus;
+
+	if (fork() == 0) {
+		ft_strchr(NULL, 0);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
+	_ft_assert(1, RED);
 	return (SUCCESS);
 }
 
@@ -231,8 +253,19 @@ int	strchr_04(void)
 
 int	strrchr_00(void)
 {
-	ft_strrchr(NULL, 0);
-	_ft_assert(1 , RED);
+	int	wstatus;
+
+	if (fork() == 0) {
+		ft_strrchr(NULL, 0);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
+	_ft_assert(1, RED);
 	return (SUCCESS);
 }
 
@@ -270,12 +303,22 @@ int	strrchr_04(void)
 
 int	strncmp_00(void)
 {
+	int		wstatus;
 	char	str[1] = {0};
 
-	ft_strncmp(NULL, NULL, 1);
-	ft_strncmp(NULL, NULL, 1);
-	ft_strncmp(NULL, str, 1);
-	ft_strncmp(str, NULL, 1);
+	if (fork() == 0) {
+		ft_strncmp(NULL, NULL, 1);
+		ft_strncmp(NULL, NULL, 1);
+		ft_strncmp(NULL, str, 1);
+		ft_strncmp(str, NULL, 1);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
 	_ft_assert(1, RED);
 	return (SUCCESS);
 }
@@ -288,6 +331,7 @@ int	strncmp_01(void)
 
 	result = result && (ft_strncmp(str1, str1, 0) == strncmp(str1, str1, 0));
 	result = result && (ft_strncmp(str1, str2, 0) == strncmp(str1, str2, 0));
+	
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -308,6 +352,7 @@ int	strncmp_03(void)
 
 	result = result && (ft_strncmp(str1, str2, 3) == strncmp(str1, str2, 3));
 	result = result && (ft_strncmp(str1, str2, 4) == strncmp(str1, str2, 4));
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -320,18 +365,29 @@ int	strncmp_04(void)
 
 	result = result && (ft_strncmp(str1, str2, 2) == strncmp(str1, str2, 2));
 	result = result && (ft_strncmp(str1, str2, 3) == strncmp(str1, str2, 3));
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
 
 int	memcmp_00(void)
 {
+	int		wstatus;
 	char	str[1] = {0};
 
-	ft_memcmp(NULL, NULL, 1);
-	ft_memcmp(NULL, NULL, 1);
-	ft_memcmp(NULL, str, 1);
-	ft_memcmp(str, NULL, 1);
+	if (fork() == 0) {
+		ft_memcmp(NULL, NULL, 1);
+		ft_memcmp(NULL, NULL, 1);
+		ft_memcmp(NULL, str, 1);
+		ft_memcmp(str, NULL, 1);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
 	_ft_assert(1, RED);
 	return (SUCCESS);
 }
@@ -344,6 +400,7 @@ int	memcmp_01(void)
 
 	result = result && (ft_memcmp(str1, str1, 0) == memcmp(str1, str1, 0));
 	result = result && (ft_memcmp(str1, str2, 0) == memcmp(str1, str2, 0));
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -356,6 +413,7 @@ int	memcmp_02(void)
 
 	result = result && (ft_memcmp(str1, str1, 2) == memcmp(str1, str1, 2));
 	result = result && (ft_memcmp(str1, str2, 2) == memcmp(str1, str2, 2));
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -368,6 +426,7 @@ int	memcmp_03(void)
 
 	result = result && (ft_memcmp(str1, str1, 3) == memcmp(str1, str1, 3));
 	result = result && (ft_memcmp(str1, str2, 4) == memcmp(str1, str2, 4));
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -380,13 +439,24 @@ int	memcmp_04(void)
 
 	result = result && (ft_memcmp(str1, str1, 2) == memcmp(str1, str1, 2));
 	result = result && (ft_memcmp(str1, str2, 3) == memcmp(str1, str2, 3));
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
 
 int	memset_00(void)
 {
-	ft_memset(NULL, 1, 1);
+	int		wstatus;
+
+	if (fork() == 0) {
+		ft_memset(NULL, 1, 1);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
 
 	_ft_assert(1, RED);
 	return (SUCCESS);
@@ -423,7 +493,17 @@ int	memset_02(void)
 
 int	memchr_00(void)
 {
-	ft_memchr(NULL, 0, 1);
+	int	wstatus;
+
+	if (fork() == 0) {
+		ft_memchr(NULL, 0, 1);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
 
 	_ft_assert(1, RED);
 	return (SUCCESS);
@@ -471,7 +551,17 @@ int	memchr_05(void)
 
 int	bzero_00(void)
 {
-	ft_bzero(NULL, 1);
+	int	wstatus;
+
+	if (fork() == 0) {
+		ft_bzero(NULL, 1);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
 
 	_ft_assert(1, RED);
 	return (SUCCESS);
@@ -486,6 +576,7 @@ int	bzero_01(void)
 	ft_bzero(str1 + 1, 0);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str2[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -500,17 +591,28 @@ int	bzero_02(void)
 	bzero(str2 + 1, 0);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str2[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
 
 int	memcpy_00(void)
 {
+	int		wstatus;
 	char	str[1] = {0};
 
-	ft_memcpy(NULL, NULL, 1);
-	ft_memcpy(NULL, str, 1);
-	ft_memcpy(str, NULL, 1);
+	if (fork() == 0) {
+		ft_memcpy(NULL, NULL, 1);
+		ft_memcpy(NULL, str, 1);
+		ft_memcpy(str, NULL, 1);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
 	_ft_assert(1, RED);
 	return (SUCCESS);
 }
@@ -527,6 +629,7 @@ int	memcpy_01(void)
 	memcpy(str3 + 1, str4 + 1, 0);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str3[i]) && (str2[i] == str4[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -543,17 +646,28 @@ int	memcpy_02(void)
 	memcpy(str3 + 1, str4 + 1, 3);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str3[i]) && (str2[i] == str4[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
 
 int	memmove_00(void)
 {
+	int		wstatus;
 	char	str[1] = {0};
 
-	ft_memmove(NULL, NULL, 1);
-	ft_memmove(NULL, str, 1);
-	ft_memmove(str, NULL, 1);
+	if (fork() == 0) {
+		ft_memmove(NULL, NULL, 1);
+		ft_memmove(NULL, str, 1);
+		ft_memmove(str, NULL, 1);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
 	_ft_assert(1, RED);
 	return (SUCCESS);
 }
@@ -570,6 +684,7 @@ int	memmove_01(void)
 	memmove(str3 + 1, str4 + 1, 0);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str3[i]) && (str2[i] == str4[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -586,6 +701,7 @@ int	memmove_02(void)
 	memmove(str3 + 1, str4 + 1, 3);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str3[i]) && (str2[i] == str4[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -600,6 +716,7 @@ int	memmove_03(void)
 	memmove(str2, str2 + 1, 3);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str2[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -614,6 +731,7 @@ int	memmove_04(void)
 	memmove(str2 + 1, str2, 3);
 	for (int i = 0; i < 5; i++)
 		result = result && (str1[i] == str2[i]);
+
 	_ft_assert(result, RED);
 	return (SUCCESS);
 }
@@ -623,9 +741,12 @@ int	memmove_05(void)
 	size_t	n = 5 * 1024 * 1024;
 	char	*str = malloc(n * sizeof(char));
 
-	bzero(str, n);
-	ft_memmove(str + 1, str, n - 1);
-	free(str);
+	if (str) {
+		bzero(str, n);
+		ft_memmove(str + 1, str, n - 1);
+		free(str);
+	}
+
 	_ft_assert(1, RED);
 	return (SUCCESS);
 }

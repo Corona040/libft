@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 15:30:36 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/23 22:44:05 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 12:01:29 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdbool.h>
 # include <math.h>
 # include "libft.h"
+
+# include <stdlib.h>
+
+# include <sys/types.h>
+# include <sys/wait.h>
+# include <unistd.h>
 
 # define RED "\033[0;31m"
 # define GREEN "\033[0;32m"
