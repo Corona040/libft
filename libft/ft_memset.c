@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 10:41:57 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/24 01:40:59 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:53:49 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 
-	if (!s)
-		return (0);
 	i = 0;
 	while (i < n)
 		*((char *)(s + i++)) = c;

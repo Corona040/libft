@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:56:57 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/24 00:49:14 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:53:21 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	if (!s1 || !s2)
-		return (-1);
 	i = 0;
 	while (i < n && *(s1 + i))
 	{

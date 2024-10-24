@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:49:26 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/23 23:42:42 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:53:13 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char			*str;
 
-	if (!s)
-		return (0);
 	str = (char *) s;
 	while (*str)
 		str++;

@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:02:02 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/24 01:33:15 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:53:56 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	uc;
 	unsigned char	*str;
 
-	if (!s)
-		return (0);
 	str = (unsigned char *) s;
 	uc = (unsigned char) c;
 	i = 0;
