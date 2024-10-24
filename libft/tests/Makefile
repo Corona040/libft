@@ -9,9 +9,9 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 INCLUDES = -I..
 
-LDLIBS = -lft
+LDLIBS = -lft -lbsd
 
-LDFLAGS = -L..
+LDFLAGS = -L.. -L/usr/lib/x86_64-linux-gnu
 
 all: $(NAME)
 
@@ -19,7 +19,7 @@ $(NAME): $(OBJS) ../libft.a
 	$(CC) -o $@ $(CFLAGS) $(OBJS) $(INCLUDES) $(LDFLAGS) $(LDLIBS)
 
 %.o: %.c
-	$(CC) -o $@ $(CFLAGS) $(INCLUDES) -c $<
+	$(CC) -o $@ $(CFLAGS) $(INCLUDES) $< -c
 
 ../libft.a:
 	make -C ..
