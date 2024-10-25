@@ -7,8 +7,6 @@ OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-INCLUDES = -I..
-
 LDLIBS = -lft -lbsd -lmalloc_hook
 
 LDFLAGS = -L.. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-rpath=.
@@ -20,14 +18,14 @@ LMALLOC = lib$(MALLOC:.c=.so)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LMALLOC)
-	make CFLAGS="-Wall -Wextra -Werror -lmalloc_hook -Ltests" -C ..
-	$(CC) -o $@ $(CFLAGS) $(OBJS) $(INCLUDES) $(LDFLAGS) $(LDLIBS)
+	make -C ..
+	$(CC) -rdynamic -o $@ $(OBJS) $(CFLAGS) $(LDLIBS) $(LDFLAGS)
 
 $(LMALLOC): $(MALLOC)
-	$(CC) -shared -o $(LMALLOC) -fPIC $(MALLOC) $(INCLUDES)
+	$(CC) -shared -o $(LMALLOC) -fPIC $(MALLOC)
 
 %.o: %.c
-	$(CC) -o $@ $(CFLAGS) $(INCLUDES) $< -c
+	$(CC) -o $@ $(CFLAGS) -c $<
 
 test: all
 	./$(NAME)
