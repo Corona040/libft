@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 14:52:23 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/25 20:42:30 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/25 22:41:12 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,9 +119,26 @@ int	itoa_00(void);
 int	itoa_01(void);
 int	itoa_02(void);
 int	itoa_03(void);
+int	strmapi_00(void);
+int	strmapi_01(void);
+int	strmapi_02(void);
+int	strmapi_03(void);
+int	striteri_00(void);
+int	striteri_01(void);
+int	striteri_02(void);
+int	putchar_fd_00(void);
+int	putchar_fd_01(void);
+int	putstr_fd_00(void);
+int	putstr_fd_01(void);
+int	putendl_fd_00(void);
+int	putendl_fd_01(void);
+int	putnbr_fd_00(void);
+int	putnbr_fd_01(void);
+int	putnbr_fd_02(void);
+int	putnbr_fd_03(void);
 
 int	tests_run = 0;
-suite	tests = {
+test_suite	tests = {
 					isalpha_00,
 					isdigit_00,
 					isalnum_00,
@@ -151,6 +168,12 @@ suite	tests = {
 					strtrim_00, strtrim_01, strtrim_02, strtrim_03,
 					split_00, split_01, split_02, split_03,
 					itoa_00, itoa_01, itoa_02, itoa_03,
+					strmapi_00, strmapi_01, strmapi_02, strmapi_03,
+					striteri_00, striteri_01, striteri_02,
+					putchar_fd_00, putchar_fd_01,
+					putstr_fd_00, putstr_fd_01,
+					putendl_fd_00, putendl_fd_01,
+					putnbr_fd_00, putnbr_fd_01, putnbr_fd_02, putnbr_fd_03,
 					NULL
 				};
 
@@ -158,6 +181,7 @@ suite	tests = {
 int	isalpha_00(void)
 {
 	_ft_announce();
+
 	int	result = 1;
 
 	for (int i = -1; i < 256; i++)
@@ -171,6 +195,7 @@ int	isalpha_00(void)
 int	isdigit_00(void)
 {
 	_ft_announce();
+
 	int	result = 1;
 
 	for (int i = -1; i < 256; i++)
@@ -184,6 +209,7 @@ int	isdigit_00(void)
 int	isalnum_00(void)
 {
 	_ft_announce();
+
 	int	result = 1;
 
 	for (int i = -1; i < 256; i++)
@@ -197,6 +223,7 @@ int	isalnum_00(void)
 int	isascii_00(void)
 {
 	_ft_announce();
+
 	int	result = 1;
 
 	for (int i = -1; i < 256; i++)
@@ -210,6 +237,7 @@ int	isascii_00(void)
 int	isprint_00(void)
 {
 	_ft_announce();
+
 	int	result = 1;
 
 	for (int i = -1; i < 256; i++)
@@ -223,6 +251,7 @@ int	isprint_00(void)
 int	toupper_00(void)
 {
 	_ft_announce();
+
 	int	result = 1;
 
 	for (int i = -1; i < 256; i++)
@@ -236,6 +265,7 @@ int	toupper_00(void)
 int	tolower_00(void)
 {
 	_ft_announce();
+
 	int	result = 1;
 
 	for (int i = -1; i < 256; i++)
@@ -249,6 +279,7 @@ int	tolower_00(void)
 int	strlen_00(void)
 {
 	_ft_announce();
+
 	ft_strlen(NULL);
 
 	_ft_assert(1, RED);
@@ -257,7 +288,6 @@ int	strlen_00(void)
 
 int	strlen_01(void)
 {
-	_ft_announce();
 	char	str[5] = {0,-1,-1,-1,-1};
 
 	_ft_assert(ft_strlen(str) == strlen(str), RED);
@@ -266,7 +296,6 @@ int	strlen_01(void)
 
 int	strlen_02(void)
 {
-	_ft_announce();
 	char	str[5] = {-1,-1,-1,-1,0};
 
 	_ft_assert(ft_strlen(str) == strlen(str), RED);
@@ -277,6 +306,7 @@ int	strlen_02(void)
 int	strchr_00(void)
 {
 	_ft_announce();
+
 	ft_strchr(NULL, 0);
 
 	_ft_assert(1, RED);
@@ -285,7 +315,6 @@ int	strchr_00(void)
 
 int	strchr_01(void)
 {
-	_ft_announce();
 	char	str[5] = {1, 1, -1, 1, 1};
 
 	_ft_assert(ft_strchr(str, -1) == strchr(str, -1), RED);
@@ -294,7 +323,6 @@ int	strchr_01(void)
 
 int	strchr_02(void)
 {
-	_ft_announce();
 	char	str[5] = {-1, -1, 0, -1, -1};
 
 	_ft_assert(ft_strchr(str, 0) == strchr(str, 0), RED);
@@ -303,7 +331,6 @@ int	strchr_02(void)
 
 int	strchr_03(void)
 {
-	_ft_announce();
 	char	str[5] = {3, 4, 5, 6, 0};
 
 	_ft_assert(ft_strchr(str, 2) == strchr(str, 2), RED);
@@ -312,7 +339,6 @@ int	strchr_03(void)
 
 int	strchr_04(void)
 {
-	_ft_announce();
 	char	str[2] = {0,-1};
 
 	_ft_assert(ft_strchr(str, -1) == strchr(str, -1), RED);
@@ -323,6 +349,7 @@ int	strchr_04(void)
 int	strrchr_00(void)
 {
 	_ft_announce();
+
 	ft_strrchr(NULL, 0);
 
 	_ft_assert(1, RED);
@@ -331,7 +358,6 @@ int	strrchr_00(void)
 
 int	strrchr_01(void)
 {
-	_ft_announce();
 	char	str[5] = {1, 1, -1, 1, 1};
 
 	_ft_assert(ft_strrchr(str, -1) == strrchr(str, -1), RED);
@@ -340,7 +366,6 @@ int	strrchr_01(void)
 
 int	strrchr_02(void)
 {
-	_ft_announce();
 	char	str[5] = {-1, -1, 0, -1, -1};
 
 	_ft_assert(ft_strrchr(str, 0) == strrchr(str, 0), RED);
@@ -349,7 +374,6 @@ int	strrchr_02(void)
 
 int	strrchr_03(void)
 {
-	_ft_announce();
 	char	str[5] = {3, 4, 5, 6, 0};
 
 	_ft_assert(ft_strrchr(str, 2) == strrchr(str, 2), RED);
@@ -358,7 +382,6 @@ int	strrchr_03(void)
 
 int	strrchr_04(void)
 {
-	_ft_announce();
 	char	str[2] = {0,-1};
 
 	_ft_assert(ft_strrchr(str, -1) == strrchr(str, -1), RED);
@@ -369,6 +392,7 @@ int	strrchr_04(void)
 int	strncmp_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {0};
 
 	ft_strncmp(NULL, NULL, 1);
@@ -382,7 +406,6 @@ int	strncmp_00(void)
 
 int	strncmp_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[1] = {0};
 	char	str2[1] = {-1};
@@ -396,7 +419,6 @@ int	strncmp_01(void)
 
 int	strncmp_02(void)
 {
-	_ft_announce();
 	char	str[1] = {0};
 
 	_ft_assert(ft_strncmp(str, str, -1) == strncmp(str, str, -1), RED);
@@ -405,7 +427,6 @@ int	strncmp_02(void)
 
 int	strncmp_03(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[4] = {-1, -2, 0, -3};
 	char	str2[4] = {-1, -2, 0, -4};
@@ -419,7 +440,6 @@ int	strncmp_03(void)
 
 int	strncmp_04(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[4] = {-1, -2, -3, 0};
 	char	str2[4] = {-1, -2, 0};
@@ -435,6 +455,7 @@ int	strncmp_04(void)
 int	memcmp_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {0};
 
 	ft_memcmp(NULL, NULL, 1);
@@ -448,7 +469,6 @@ int	memcmp_00(void)
 
 int	memcmp_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[1] = {0};
 	char	str2[1] = {-1};
@@ -462,7 +482,6 @@ int	memcmp_01(void)
 
 int	memcmp_02(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[2] = {0, 0};
 	char	str2[2] = {0, 0};
@@ -476,7 +495,6 @@ int	memcmp_02(void)
 
 int	memcmp_03(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[4] = {-1, -2, 0, -3};
 	char	str2[4] = {-1, -2, 0, -4};
@@ -490,7 +508,6 @@ int	memcmp_03(void)
 
 int	memcmp_04(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[4] = {-1, -2, -3, 0};
 	char	str2[4] = {-1, -2, 0};
@@ -506,6 +523,7 @@ int	memcmp_04(void)
 int	memset_00(void)
 {
 	_ft_announce();
+
 	ft_memset(NULL, 1, 1);
 
 	_ft_assert(1, RED);
@@ -514,7 +532,6 @@ int	memset_00(void)
 
 int	memset_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {0, -1, 0, -1, -1};
 	char	str2[5] = {0, -1, 0, -1, -1};
@@ -530,7 +547,6 @@ int	memset_01(void)
 
 int	memset_02(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {0, -1, 0, -1, -1};
 	char	str2[5] = {0, -1, 0, -1, -1};
@@ -547,6 +563,7 @@ int	memset_02(void)
 int	memchr_00(void)
 {
 	_ft_announce();
+
 	ft_memchr(NULL, 0, 1);
 
 	_ft_assert(1, RED);
@@ -555,7 +572,6 @@ int	memchr_00(void)
 
 int	memchr_01(void)
 {
-	_ft_announce();
 	char	str[5] = {0, 0, -1, 1, 1};
 
 	_ft_assert(ft_memchr(str, -1, 5) == memchr(str, -1, 5), RED);
@@ -564,7 +580,6 @@ int	memchr_01(void)
 
 int	memchr_02(void)
 {
-	_ft_announce();
 	char	str[5] = {0, 0, -1, 1, 1};
 
 	_ft_assert(ft_memchr(str, -1, 3) == memchr(str, -1, 3), RED);
@@ -573,7 +588,6 @@ int	memchr_02(void)
 
 int	memchr_03(void)
 {
-	_ft_announce();
 	char	str[5] = {-1, -1, 0, -1, -1};
 
 	_ft_assert(ft_memchr(str, 0, 5) == memchr(str, 0, 5), RED);
@@ -582,7 +596,6 @@ int	memchr_03(void)
 
 int	memchr_04(void)
 {
-	_ft_announce();
 	char	str[5] = {3, 4, 5, 6, 2};
 
 	_ft_assert(ft_memchr(str, 2, 4) == memchr(str, 2, 4), RED);
@@ -591,7 +604,6 @@ int	memchr_04(void)
 
 int	memchr_05(void)
 {
-	_ft_announce();
 	char	str[2] = {0,-1};
 
 	_ft_assert(ft_memchr(str, -1, 2) == memchr(str, -1, 2), RED);
@@ -602,6 +614,7 @@ int	memchr_05(void)
 int	bzero_00(void)
 {
 	_ft_announce();
+
 	ft_bzero(NULL, 1);
 
 	_ft_assert(1, RED);
@@ -610,7 +623,6 @@ int	bzero_00(void)
 
 int	bzero_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {0, -1, 0, 1, 0};
 	char	str2[5] = {0, -1, 0, 1, 0};
@@ -625,7 +637,6 @@ int	bzero_01(void)
 
 int	bzero_02(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {0, -1, 0, 1, 0};
 	char	str2[5] = {0, -1, 0, 1, 0};
@@ -643,6 +654,7 @@ int	bzero_02(void)
 int	memcpy_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {0};
 
 	ft_memcpy(NULL, NULL, 1);
@@ -655,7 +667,6 @@ int	memcpy_00(void)
 
 int	memcpy_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {5, 5, 5, 5, 5};
 	char	str2[5] = {0, -1, 0, 1, 2};
@@ -673,7 +684,6 @@ int	memcpy_01(void)
 
 int	memcpy_02(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {5, 5, 5, 5, 5};
 	char	str2[5] = {0, -1, 0, 1, 2};
@@ -693,6 +703,7 @@ int	memcpy_02(void)
 int	memmove_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {0};
 
 	ft_memmove(NULL, NULL, 1);
@@ -705,7 +716,6 @@ int	memmove_00(void)
 
 int	memmove_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {5, 5, 5, 5, 5};
 	char	str2[5] = {0, -1, 0, 1, 2};
@@ -723,7 +733,6 @@ int	memmove_01(void)
 
 int	memmove_02(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[5] = {5, 5, 5, 5, 5};
 	char	str2[5] = {0, -1, 0, 1, 2};
@@ -741,7 +750,6 @@ int	memmove_02(void)
 
 int	memmove_03(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[10] = {0, 1, 0, 2, 0, 3, 0, 4, 0, 5};
 	char	str2[10] = {0, 1, 0, 2, 0, 3, 0, 4, 0, 5};
@@ -757,7 +765,6 @@ int	memmove_03(void)
 
 int	memmove_04(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	str1[10] = {0, 1, 0, 2, 0, 3, 0, 4, 0, 5};
 	char	str2[10] = {0, 1, 0, 2, 0, 3, 0, 4, 0, 5};
@@ -774,7 +781,6 @@ int	memmove_04(void)
 // try memmvoing 5MB
 int	memmove_05(void)
 {
-	_ft_announce();
 	size_t	n = 5 * 1024 * 1024;
 	char	*str;
 	int		result = 1;
@@ -794,6 +800,7 @@ int	memmove_05(void)
 int	strnstr_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {-1};
 
 	ft_strnstr(NULL, NULL, 1);
@@ -806,7 +813,6 @@ int	strnstr_00(void)
 
 int	strnstr_01(void)
 {
-	_ft_announce();
 	char	little[1] = {-1};
 	char	big[1] = {-1};
 
@@ -816,7 +822,6 @@ int	strnstr_01(void)
 
 int	strnstr_02(void)
 {
-	_ft_announce();
 	char	little[1] = {0};
 	char	big[1] = {-1};
 
@@ -826,7 +831,6 @@ int	strnstr_02(void)
 
 int	strnstr_03(void)
 {
-	_ft_announce();
 	char	little[1] = {1};
 	char	big[5] = {2, 3, 4, 5, 0};
 
@@ -836,7 +840,6 @@ int	strnstr_03(void)
 
 int	strnstr_04(void)
 {
-	_ft_announce();
 	char	little[4] = {1, 2, 3, 0};
 	char	big[10] = {1, 2, 1, 3, 1, 2, 1, 2, 3, 2};
 
@@ -846,7 +849,6 @@ int	strnstr_04(void)
 
 int	strnstr_05(void)
 {
-	_ft_announce();
 	char	little[4] = {1, 2, 3, 0};
 	char	big[10] = {1, 2, 1, 3, 1, 2, 1, 2, 3, 2};
 
@@ -856,7 +858,6 @@ int	strnstr_05(void)
 
 int	strnstr_06(void)
 {
-	_ft_announce();
 	char	little[4] = {1, 2, 3, 0};
 	char	big[10] = {1, 2, 1, 3, 1, 2, 1, 2, 3, 2};
 
@@ -867,6 +868,7 @@ int	strnstr_06(void)
 int	strlcpy_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {-1};
 
 	ft_strlcpy(NULL, NULL, 1);
@@ -879,7 +881,6 @@ int	strlcpy_00(void)
 
 int	strlcpy_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	src1[5] = {1, 2, 3, 4, 0};
 	char	dst1[5] = {-1, -1, 0, -1, -1};
@@ -898,7 +899,6 @@ int	strlcpy_01(void)
 
 int	strlcpy_02(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	src1[5] = {1, 2, 3, 4, 0};
 	char	dst1[5] = {-1, -1, 1, -1, -1};
@@ -917,7 +917,6 @@ int	strlcpy_02(void)
 
 int	strlcpy_03(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	src1[5] = {1, 0, 3, 4, 0};
 	char	dst1[5] = {-1, -1, 0, -1, -1};
@@ -937,6 +936,7 @@ int	strlcpy_03(void)
 int	strlcat_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {-1};
 
 	ft_strlcat(NULL, NULL, 1);
@@ -949,7 +949,6 @@ int	strlcat_00(void)
 
 int	strlcat_01(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	src1[5] = {1, 2, 3, 4, 0};
 	char	dst1[10] = {-1, -1, 0, -1, -1, 0, 0, 0, 0, 0};
@@ -968,7 +967,6 @@ int	strlcat_01(void)
 
 int	strlcat_02(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	src1[5] = {1, 2, 3, 4, 0};
 	char	dst1[10] = {-1, -1, 1, -1, 0, 0, 0, 0, 0, 0};
@@ -987,7 +985,6 @@ int	strlcat_02(void)
 
 int	strlcat_03(void)
 {
-	_ft_announce();
 	int		result = 1;
 	char	src1[5] = {1, 0, 3, 4, 0};
 	char	dst1[10] = {-1, -1, 0, -1, -1, 0, 0, 0, 0, 0};
@@ -1007,6 +1004,7 @@ int	strlcat_03(void)
 int	atoi_00(void)
 {
 	_ft_announce();
+
 	ft_atoi(NULL);
 
 	_ft_assert(1, RED);
@@ -1015,7 +1013,6 @@ int	atoi_00(void)
 
 int	atoi_01(void)
 {
-	_ft_announce();
 	char	str[1] = {0};
 
 	_ft_assert(ft_atoi(str) == atoi(str), RED);
@@ -1024,7 +1021,6 @@ int	atoi_01(void)
 
 int	atoi_02(void)
 {
-	_ft_announce();
 	char	*str = "---+++--++-+-000123000a";
 
 	_ft_assert(ft_atoi(str) == atoi(str), RED);
@@ -1033,7 +1029,6 @@ int	atoi_02(void)
 
 int	atoi_03(void)
 {
-	_ft_announce();
 	char	*str = "/000123000a";
 
 	_ft_assert(ft_atoi(str) == atoi(str), RED);
@@ -1042,7 +1037,6 @@ int	atoi_03(void)
 
 int	atoi_04(void)
 {
-	_ft_announce();
 	char	*str = "2147483648";
 
 	_ft_assert(ft_atoi(str) == atoi(str), RED);
@@ -1051,7 +1045,6 @@ int	atoi_04(void)
 
 int	atoi_05(void)
 {
-	_ft_announce();
 	char	*str = "-2147483649";
 
 	_ft_assert(ft_atoi(str) == atoi(str), RED);
@@ -1061,6 +1054,7 @@ int	atoi_05(void)
 int	calloc_00(void)
 {
 	_ft_announce();
+
 	void	*ptr;
 
 	ptr = ft_calloc(0, 0);
@@ -1079,7 +1073,6 @@ int	calloc_00(void)
 
 int	calloc_01(void)
 {
-	_ft_announce();
 	_ft_assert(ft_calloc(10, (size_t)4294967295) == calloc(10, (size_t)4294967295), RED);
 	return (SUCCESS);
 }
@@ -1101,7 +1094,6 @@ int	calloc_01(void)
 
 int	calloc_03(void)
 {
-	_ft_announce();
 	int		result = 1;
 	void	*ptr;
 
@@ -1115,7 +1107,6 @@ int	calloc_03(void)
 
 int	calloc_04(void)
 {
-	_ft_announce();
 	void	*ptr;
 
 	fail_malloc = true;
@@ -1130,6 +1121,7 @@ int	calloc_04(void)
 int	strdup_00(void)
 {
 	_ft_announce();
+
 	ft_strdup(NULL);
 
 	_ft_assert(1, RED);
@@ -1138,14 +1130,13 @@ int	strdup_00(void)
 
 int	strdup_01(void)
 {
-	_ft_announce();
 	char	str[1] = {0};
 	void	*res1;
 	void	*res2;
 
 	res1 = ft_strdup(str);
 	res2 = strdup(str);
-	_ft_assert(((res1 > NULL) == (res2 > NULL)) && !strcmp(res1 , res2), RED);
+	_ft_assert(((res1 != NULL) == (res2 != NULL)) && !strcmp(res1 , res2), RED);
 	if (res1)
 		free(res1);
 	if (res2)
@@ -1155,14 +1146,13 @@ int	strdup_01(void)
 
 int	strdup_02(void)
 {
-	_ft_announce();
 	char	str[5] = {-1, 1, 1, -1, 0};
 	void	*res1;
 	void	*res2;
 
 	res1 = ft_strdup(str);
 	res2 = strdup(str);
-	_ft_assert(((res1 > NULL) == (res2 > NULL)) && !strcmp(res1 , res2), RED);
+	_ft_assert(((res1 != NULL) == (res2 != NULL)) && !strcmp(res1 , res2), RED);
 	if (res1)
 		free(res1);
 	if (res2)
@@ -1172,7 +1162,6 @@ int	strdup_02(void)
 
 int	strdup_03(void)
 {
-	_ft_announce();
 	char	str[5] = {-1, 1, 1, -1, 0};
 	void	*ptr;
 
@@ -1188,6 +1177,7 @@ int	strdup_03(void)
 int	substr_00(void)
 {
 	_ft_announce();
+
 	char	*substr;
 
 	substr = ft_substr(NULL, 0, 1);
@@ -1200,7 +1190,6 @@ int	substr_00(void)
 
 int	substr_01(void)
 {
-	_ft_announce();
 	char	*substr;
 	char	str[10] = {-1, 1, 2, 3, 4, 5, 6, 0, 1, 1};
 
@@ -1213,7 +1202,6 @@ int	substr_01(void)
 
 int	substr_02(void)
 {
-	_ft_announce();
 	char	*substr;
 	char	str[10] = {-1, 1, 2, 3, 4, 5, 6, 0, 1, 1};
 	int		result = 1;
@@ -1228,7 +1216,6 @@ int	substr_02(void)
 
 int	substr_03(void)
 {
-	_ft_announce();
 	char	*substr;
 	char	str[10] = {-1, 1, 2, 3, 4, 5, 6, 0, 1, 1};
 	int		result = 1;
@@ -1245,7 +1232,6 @@ int	substr_03(void)
 
 int	substr_04(void)
 {
-	_ft_announce();
 	char	*substr;
 
 	fail_malloc = true;
@@ -1260,6 +1246,7 @@ int	substr_04(void)
 int	strjoin_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {0};
 	char	*strjoin;
 
@@ -1282,7 +1269,6 @@ int	strjoin_00(void)
 
 int	strjoin_01(void)
 {
-	_ft_announce();
 	char	str1[4] = {-1, 1, 2, 0};
 	char	str2[7] = {-1, 1, 2, 3, 4, 5, 0};
 	char	res[10] = {-1, 1, 2, -1, 1, 2, 3, 4, 5, 0};
@@ -1299,7 +1285,6 @@ int	strjoin_01(void)
 
 int	strjoin_02(void)
 {
-	_ft_announce();
 	char	str1[1] = {0};
 	char	str2[7] = {-1, 1, 2, 3, 4, 5, 0};
 	char	*strjoin;
@@ -1315,7 +1300,6 @@ int	strjoin_02(void)
 
 int	strjoin_03(void)
 {
-	_ft_announce();
 	char	str1[1] = {0};
 	char	str2[7] = {-1, 1, 2, 3, 4, 5, 0};
 	char	*strjoin;
@@ -1331,7 +1315,6 @@ int	strjoin_03(void)
 
 int	strjoin_04(void)
 {
-	_ft_announce();
 	char	*strjoin;
 
 	fail_malloc = true;
@@ -1346,6 +1329,7 @@ int	strjoin_04(void)
 int	strtrim_00(void)
 {
 	_ft_announce();
+
 	char	str[1] = {0};
 	char	*trim;
 
@@ -1368,7 +1352,6 @@ int	strtrim_00(void)
 
 int	strtrim_01(void)
 {
-	_ft_announce();
 	char	str[4] = {1,2,3,0};
 	char	set[1] = {0};
 	char	*strtrim;
@@ -1384,7 +1367,6 @@ int	strtrim_01(void)
 
 int	strtrim_02(void)
 {
-	_ft_announce();
 	char	str[10] = {-3, -1, 2, -2, -1, 5, -2, -1, 0};
 	char	set[4] = {-1, -2, -3, 0};
 	char	res[5] = {2, -2, -1, 5, 0};
@@ -1401,7 +1383,6 @@ int	strtrim_02(void)
 
 int	strtrim_03(void)
 {
-	_ft_announce();
 	char	*strtrim;
 
 	fail_malloc = true;
@@ -1417,6 +1398,7 @@ int	split_00(void)
 {
 	_ft_announce();
 
+
 	ft_split(NULL, 1);
 
 	_ft_assert(1, RED);
@@ -1425,7 +1407,6 @@ int	split_00(void)
 
 int	split_01(void)
 {
-	_ft_announce();
 	char	str[2] = {1, 0};
 
 	ft_split(str, 0);
@@ -1436,7 +1417,6 @@ int	split_01(void)
 
 int	split_02(void)
 {
-	_ft_announce();
 	char	str[10] = {2, 1, 2, 1, 2, 1, 1, 1, 2, 0};
 	char	res[4][4] = {{1,0}, {1,0}, {1,1,1,0}, {0}};
 	char	**split;
@@ -1455,7 +1435,6 @@ int	split_02(void)
 
 int	split_03(void)
 {
-	_ft_announce();
 	char	**split;
 
 	fail_malloc = true;
@@ -1473,6 +1452,7 @@ int	split_03(void)
 int	itoa_00(void)
 {
 	_ft_announce();
+
 	char	*a;
 	int		result = 1;
 
@@ -1489,7 +1469,6 @@ int	itoa_00(void)
 
 int	itoa_01(void)
 {
-	_ft_announce();
 	char	*a;
 	int		result = 1;
 
@@ -1503,7 +1482,6 @@ int	itoa_01(void)
 
 int	itoa_02(void)
 {
-	_ft_announce();
 	char	*a;
 	int		result = 1;
 
@@ -1517,7 +1495,6 @@ int	itoa_02(void)
 
 int	itoa_03(void)
 {
-	_ft_announce();
 	char	*a;
 
 	fail_malloc = true;
@@ -1527,11 +1504,331 @@ int	itoa_03(void)
 	return (SUCCESS);
 }
 
+char	strmapi_toupper(unsigned int i, char c)
+{
+	(void)i;
+	return (toupper(c));
+}
+
+int	strmapi_00(void)
+{
+	_ft_announce();
+
+	char	str[1] = {0};
+	char	*map;
+	int		result = 1;
+
+	map = ft_strmapi(NULL, NULL);
+	result = result && (map == NULL);
+	map = ft_strmapi(str, NULL);
+	result = result && (map == NULL);
+	map = ft_strmapi(NULL, strmapi_toupper);
+	result = result && (map == NULL);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	strmapi_01(void)
+{
+	char	str[1] = {0};
+	char	*map;
+	int		result = 1;
+
+	map = ft_strmapi(str, strmapi_toupper);
+	result = result && (*map == 0);
+	free(map);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	strmapi_02(void)
+{
+	char	str[10] = "a1b-hello";
+	char	*map;
+	char	res[10] = "A1B-HELLO";
+	int		result = 1;
+
+	map = ft_strmapi(str, strmapi_toupper);
+	result = result && (!strcmp(res, map));
+	free(map);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	strmapi_03(void)
+{
+	char	str[10] = "a1b-hello";
+	char	*map;
+	int		result = 1;
+
+
+	fail_malloc = true;
+	map = ft_strmapi(str, strmapi_toupper);
+	result = result && (map == NULL);
+	if (map)
+		free(map);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+void	striteri_toupper(unsigned int i, char *c)
+{
+	(void)i;
+	*c = toupper(*c);
+}
+
+int	striteri_00(void)
+{
+	_ft_announce();
+
+	char	str[1] = {0};
+
+	ft_striteri(NULL, NULL);
+	ft_striteri(str, NULL);
+	ft_striteri(NULL, striteri_toupper);
+
+	_ft_assert(1, RED);
+	return (SUCCESS);
+}
+
+int	striteri_01(void)
+{
+	char	str[1] = {0};
+	int		result = 1;
+
+	ft_striteri(str, striteri_toupper);
+	result = result && (*str == 0);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	striteri_02(void)
+{
+	char	str[10] = "a1b-hello";
+	char	res[10] = "A1B-HELLO";
+	int		result = 1;
+
+	ft_striteri(str, striteri_toupper);
+	result = result && (!strcmp(res, str));
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	putchar_fd_00(void)
+{
+	_ft_announce();
+
+
+	ft_putchar_fd(0, -1);
+
+	_ft_assert(1, RED);
+	return (SUCCESS);
+}
+
+int	putchar_fd_01(void)
+{
+	int		pipefd[2];
+	char	buf[1];
+
+	pipe(pipefd);
+	if (fork() == 0) {
+		close(pipefd[0]);
+		ft_putchar_fd(42, pipefd[1]);
+		close(pipefd[1]);
+		exit(EXIT_SUCCESS);
+	}
+	close(pipefd[1]);
+	while (read(pipefd[0], &buf, 1) > 0)
+		;
+	close(pipefd[0]);
+
+	_ft_assert(*buf == 42, RED);
+	return (SUCCESS);
+}
+
+int	putstr_fd_00(void)
+{
+	_ft_announce();
+
+
+	ft_putchar_fd(0, -1);
+
+	_ft_assert(1, RED);
+	return (SUCCESS);
+}
+
+int	putstr_fd_01(void)
+{
+	int		pipefd[2];
+	char	buf[1];
+	char	*str = "Hello";
+	int		result = 1;
+
+	pipe(pipefd);
+	if (fork() == 0) {
+		close(pipefd[0]);
+		ft_putstr_fd(str, pipefd[1]);
+		close(pipefd[1]);
+		exit(EXIT_SUCCESS);
+	}
+	close(pipefd[1]);
+
+	int	i = 0;
+	while (read(pipefd[0], &buf, 1) > 0) {
+		result = result && (*buf == str[i]);
+		i++;
+	}
+	close(pipefd[0]);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	putendl_fd_00(void)
+{
+	_ft_announce();
+
+
+	ft_putendl_fd(0, -1);
+
+	_ft_assert(1, RED);
+	return (SUCCESS);
+}
+
+int	putendl_fd_01(void)
+{
+	int		pipefd[2];
+	char	buf[1];
+	char	*str = "Hello";
+	int		result = 1;
+
+	pipe(pipefd);
+	if (fork() == 0) {
+		close(pipefd[0]);
+		ft_putstr_fd(str, pipefd[1]);
+		close(pipefd[1]);
+		exit(EXIT_SUCCESS);
+	}
+	close(pipefd[1]);
+
+	int	i = 0;
+	while (read(pipefd[0], &buf, 1) > 0) {
+		if (i < 5)
+			result = result && (*buf == str[i]);
+		else
+			result = result && (*buf == '\n');
+		i++;
+	}
+	close(pipefd[0]);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	putnbr_fd_00(void)
+{
+	_ft_announce();
+
+	ft_putnbr_fd(0, -1);
+
+	_ft_assert(1, RED);
+	return (SUCCESS);
+}
+
+int	putnbr_fd_01(void)
+{
+	int		pipefd[2];
+	char	buf[1];
+	int		nbr = 42;
+	int		result = 1;
+
+	pipe(pipefd);
+	if (fork() == 0) {
+		close(pipefd[0]);
+		ft_putnbr_fd(nbr, pipefd[1]);
+		close(pipefd[1]);
+		exit(EXIT_SUCCESS);
+	}
+	close(pipefd[1]);
+
+	int	i = 0;
+	while (read(pipefd[0], &buf, 1) > 0) {
+		result = result && (*buf == "42"[i]);
+		i++;
+	}
+	close(pipefd[0]);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	putnbr_fd_02(void)
+{
+	int		pipefd[2];
+	char	buf[1];
+	int		nbr = INT_MAX;
+	int		result = 1;
+
+	pipe(pipefd);
+	if (fork() == 0) {
+		close(pipefd[0]);
+		ft_putnbr_fd(nbr, pipefd[1]);
+		close(pipefd[1]);
+		exit(EXIT_SUCCESS);
+	}
+	close(pipefd[1]);
+
+	int	i = 0;
+	while (read(pipefd[0], &buf, 1) > 0) {
+		result = result && (*buf == "2147483647"[i]);
+		i++;
+	}
+	close(pipefd[0]);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	putnbr_fd_03(void)
+{
+	int		pipefd[2];
+	char	buf[1];
+	int		nbr = INT_MIN;
+	int		result = 1;
+
+	pipe(pipefd);
+	if (fork() == 0) {
+		close(pipefd[0]);
+		ft_putnbr_fd(nbr, pipefd[1]);
+		close(pipefd[1]);
+		exit(EXIT_SUCCESS);
+	}
+	close(pipefd[1]);
+
+	int	i = 0;
+	while (read(pipefd[0], &buf, 1) > 0) {
+		result = result && (*buf == "-2147483648"[i]);
+		i++;
+	}
+	close(pipefd[0]);
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
 int	ft_test_env(unit_test test)
 {
+	char	buf[32];
 	int		exit_code;
 	int		wstatus;
 
+	memset(buf, 0, 32);
 	if (fork() == 0) {
 		exit_code = test();
 		exit(exit_code);
@@ -1540,12 +1837,13 @@ int	ft_test_env(unit_test test)
 	if (WIFEXITED(wstatus))
 		return (WEXITSTATUS(wstatus));
 	else {
-		printf(YELLOW"%7s\n", "[CRASH]");
+		sprintf(buf, YELLOW"%-5s ", " O-O ");
+		write(STDOUT_FILENO, buf, strlen(buf));
 	}
 	return (CRASH);
 }
 
-int	unit_test_suite(suite tests)
+int	unit_test_suite(test_suite tests)
 {
 	while (*tests)
 		_ft_weakVerify((*(tests++)));
@@ -1559,7 +1857,7 @@ int	main(void)
 	result = 0;
 	result += unit_test_suite(tests);
 	if (result == 0)
-		printf(GREEN"PASSED\n");
+		printf(GREEN"\nPASSED\n");
 	else
 		printf(RED"FAILED: %d\n", result);
 	printf(DFLT"Tests run: %d\n", tests_run);
