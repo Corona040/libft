@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 15:30:36 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/24 12:01:29 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:08:02 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define FAILURE 1
 # define SUCCESS 0
 
+int	fail_malloc = 0;
 int	status = SUCCESS;
 
 # define _ft_FAIL(severity) printf(severity"KO"DFLT": %-30s line %i\n", __func__, __LINE__)

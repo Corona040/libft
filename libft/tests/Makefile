@@ -9,29 +9,36 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 INCLUDES = -I..
 
-LDLIBS = -lft -lbsd
+LDLIBS = -lft -lbsd -lmalloc_hook
 
-LDFLAGS = -L.. -L/usr/lib/x86_64-linux-gnu
+LDFLAGS = -L.. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-rpath=.
+
+MALLOC = malloc_hook.c
+
+LMALLOC = lib$(MALLOC:.c=.so)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) ../libft.a
+$(NAME): $(OBJS) $(LMALLOC)
+	make CFLAGS="-Wall -Wextra -Werror -lmalloc_hook -Ltests" -C ..
 	$(CC) -o $@ $(CFLAGS) $(OBJS) $(INCLUDES) $(LDFLAGS) $(LDLIBS)
+
+$(LMALLOC): $(MALLOC)
+	$(CC) -shared -o $(LMALLOC) -fPIC $(MALLOC) $(INCLUDES)
 
 %.o: %.c
 	$(CC) -o $@ $(CFLAGS) $(INCLUDES) $< -c
-
-../libft.a:
-	make -C ..
 
 test: all
 	./$(NAME)
 
 clean:
 	rm -rf $(OBJS)
+	make clean -C ..
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(LMALLOC)
+	make fclean -C ..
 
 re: fclean all
 

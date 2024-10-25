@@ -86,7 +86,7 @@ $(NAME): $(OBJS)
 	ar rcs $@ $^
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
 	rm -f $(OBJS_COMP)

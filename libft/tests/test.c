@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 14:52:23 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/24 15:57:49 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:34:30 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,16 @@ int	strlcat_00(void);
 int	strlcat_01(void);
 int	strlcat_02(void);
 int	strlcat_03(void);
+int	atoi_00(void);
+int	atoi_01(void);
+int	atoi_02(void);
+int	atoi_03(void);
+int	atoi_04(void);
+int	atoi_05(void);
+int	calloc_00(void);
+int	calloc_01(void);
+// int	calloc_02(void);
+int	calloc_03(void);
 
 int	tests_run = 0;
 suite	tests = {
@@ -104,6 +114,9 @@ suite	tests = {
 					strnstr_00, strnstr_01, strnstr_02, strnstr_03, strnstr_04, strnstr_05,
 					strlcpy_00, strlcpy_01, strlcpy_02, strlcpy_03,
 					strlcat_00, strlcat_01, strlcat_02, strlcat_03,
+					atoi_00, atoi_01, atoi_02, atoi_03, atoi_04,
+					// calloc_00, calloc_01, calloc_02, calloc_03,
+					calloc_00, calloc_01, calloc_03,
 					NULL
 				};
 
@@ -1009,6 +1022,122 @@ int	strlcat_03(void)
 		result = result && (src1[i] == src2[i]);
 		result = result && (dst1[i] == dst2[i]);
 	}
+
+	_ft_assert(result, RED);
+	return (SUCCESS);
+}
+
+int	atoi_00(void)
+{
+	int		wstatus;
+
+	if (fork() == 0) {
+		ft_atoi(NULL);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(GREEN"[SEGFAULT]:\n");
+	else
+		printf(YELLOW"[NO SEGFAULT]:\n");
+
+	_ft_assert(1, RED);
+	return (SUCCESS);
+}
+
+int	atoi_01(void)
+{
+	char	str[1] = {0};
+
+	_ft_assert(ft_atoi(str) == atoi(str), RED);
+	return (SUCCESS);
+}
+
+int	atoi_02(void)
+{
+	char	*str = "---+++--++-+-000123000a";
+
+	_ft_assert(ft_atoi(str) == atoi(str), RED);
+	return (SUCCESS);
+}
+
+int	atoi_03(void)
+{
+	char	*str = "/000123000a";
+
+	_ft_assert(ft_atoi(str) == atoi(str), RED);
+	return (SUCCESS);
+}
+
+int	atoi_04(void)
+{
+	char	*str = "2147483648";
+
+	_ft_assert(ft_atoi(str) == atoi(str), RED);
+	return (SUCCESS);
+}
+
+int	atoi_05(void)
+{
+	char	*str = "-2147483649";
+
+	_ft_assert(ft_atoi(str) == atoi(str), RED);
+	return (SUCCESS);
+}
+
+int	calloc_00(void)
+{
+	void	*ptr;
+	int		wstatus;
+
+	if (fork() == 0) {
+		ptr = ft_calloc(0, 0);
+		free(ptr);
+		ptr = ft_calloc(1, 0);
+		free(ptr);
+		ptr = ft_calloc(0, 1);
+		free(ptr);
+		exit(EXIT_SUCCESS);
+	}
+	wait(&wstatus);
+	if (!WIFEXITED(wstatus))
+		printf(RED"[SEGFAULT]:\n");
+	else
+		printf(GREEN"[NO SEGFAULT]:\n");
+
+	_ft_assert(1, RED);
+	return (SUCCESS);
+}
+
+int	calloc_01(void)
+{
+	_ft_assert(ft_calloc(10, (size_t)4294967295) == calloc(10, (size_t)4294967295), RED);
+	return (SUCCESS);
+}
+
+// int	calloc_02(void)
+// {
+// 	int		result = 0;
+// 	void	*ptr;
+//
+// 	ptr = ft_calloc(2, (size_t)4294967295);
+// 	if (ptr) {
+// 		result = 1;
+// 		free(ptr);
+// 	}
+//
+// 	_ft_assert(result , RED);
+// 	return (SUCCESS);
+// }
+
+int	calloc_03(void)
+{
+	int		result = 1;
+	void	*ptr;
+
+	ptr = ft_calloc(2,2);
+	for (int i = 0; i < 4; i++)
+		result = result && (((char *)ptr)[i] == 0);
 
 	_ft_assert(result, RED);
 	return (SUCCESS);
