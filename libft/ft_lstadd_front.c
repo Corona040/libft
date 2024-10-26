@@ -6,7 +6,7 @@
 /*   By: ecorona- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:11:39 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/01/09 10:37:49 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/26 16:33:23 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ DESC:
 */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	t_list	*tmp_lst;
+
 	if (lst != 0)
 	{
-		new->next = (*lst);
+		tmp_lst = *lst;
 		*lst = new;
+		new->next = tmp_lst;
 	}
 }

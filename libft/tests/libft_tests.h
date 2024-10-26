@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 00:22:58 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/26 00:39:48 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/26 15:55:25 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,12 @@ extern test_suite	putchar_fd_tests;
 extern test_suite	putstr_fd_tests;
 extern test_suite	putendl_fd_tests;
 extern test_suite	putnbr_fd_tests;
+extern test_suite	lstnew_tests;
+extern test_suite	lstadd_front_tests;
+extern test_suite	lstsize_tests;
+extern test_suite	lstlast_tests;
+extern test_suite	lstadd_back_tests;
+extern test_suite	lstdelone_tests;
+extern test_suite	lstclear_tests;
+extern test_suite	lstiter_tests;
+extern test_suite	lstmap_tests;
