@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 14:52:23 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/26 16:50:45 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:13:52 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,7 @@ int	main(int argc, char **argv)
 	if (result == 0)
 		printf(GREEN"\nPASSED\n");
 	else
-		printf(RED"\nFAILED: %d\n", result);
+		printf(RED"\nFAILED: %d\n", status);
 	printf(DFLT"Tests run: %d\n", tests_run);
 
 	return (result);
