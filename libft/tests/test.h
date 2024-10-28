@@ -6,7 +6,7 @@
 /*   By: ecorona- <ecorona-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 15:30:36 by ecorona-          #+#    #+#             */
-/*   Updated: 2024/10/26 15:34:23 by ecorona-         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:08:56 by ecorona-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef unit_test test_suite[];
 int			ft_test_env(unit_test test);
 void		ft_announce(void);
 
-# define _ft_FAIL(severity) printf(severity"%-7s ", " T-T ")
+# define _ft_FAIL(severity) printf(severity"%-5s ", " T-T ")
 # define _ft_PASS() printf(GREEN"%-5s ", " ^-^ ")
 # define _ft_assert(test, severity) do {if (!(test)){ _ft_FAIL(severity); return (FAILURE);} else { _ft_PASS();}} while (0)
 # define _ft_verify(test) do { int r=test(); tests_run++; if (r) return (r);} while (0)
